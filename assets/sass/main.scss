@@ -1,12 +1,29 @@
+// Spacing, margins, padding
+$xs-rem: 0.35rem;
+$sm-rem: 0.75rem;
+$md-rem: 1.5rem;
+$lg-rem: 2rem;
+$xl-rem: 3rem;
+
+$sm-px: 10px;
+$md-px: 20px;
+$lg-px: 30px;
+$xl-px: 60px;
+
+$sm-vw: 1vw;
+$md-vw: 2vw;
+$lg-vw: 3vw;
+$xl-vw: 5vw;
+
 // Dimensions
 $sidebar-width: 20vw;
+$sidebar-pad: $sm-vw;
+$sidebar-total-width: $sidebar-width + ($sidebar-pad * 2);
 
-// Spacing, margins, padding
-$bumper-sm: 14px;
-$bumper-md: 20px;
-$bumper-lg: 30px;
-$bumper-xl: 60px;
-
+:root
+{
+    font-size: 16px;
+}
 
 .kg-width-wide,
 .kg-width-full,
@@ -38,6 +55,7 @@ $bumper-xl: 60px;
         top: 0; bottom: 0; 
         max-width: 400px;
         width: $sidebar-width;
+        padding: $sidebar-pad;
     }
 }
 
@@ -49,32 +67,53 @@ $bumper-xl: 60px;
     // Fixed left sidebar (optional)
     @media screen and (min-width:1200px)
     {
-        padding-left: $sidebar-width;
+        padding-left: $sidebar-total-width;
     }
-}
 
-.wrapper
-{
     .main
     {
-        padding: $bumper-xl;
+        padding: $xl-px;
+        
+        // Where the post's body content lives
+        .post
+        {
+            section
+            {
+                p 
+                {
+                    margin: 0.25rem 0;
+                }
+
+                ol, ul 
+                {
+                    margin-left: $md-rem;
+                }
+            }
+        }
     }
+
 }
 
 .footer 
 {
-    background-color: palevioletred;
-    margin: $bumper-xl 0 0;
-    padding: $bumper-md 0;
+    background-color: paleturquoise;
+    margin: $xl-rem 0 0;
+    padding: $lg-rem 0;
 
     // Fixed left sidebar (optional)
     @media screen and (min-width:1200px)
     {
-        padding-left: $sidebar-width;
+        padding-left: $sidebar-total-width;
     }
     
     > *
     {
-        padding: 0 $bumper-xl;
+        padding: 0 $xl-rem;
     }
+}
+
+.post-title
+{
+    font-size: $xl-rem;
+    margin-bottom: $lg-rem;
 }
