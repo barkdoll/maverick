@@ -1,0 +1,42 @@
+@import 'includes/variables';
+
+// Dimensions
+$sidebar-width: 20vw;
+$sidebar-pad: $sm-vw;
+$sidebar-total-width: $sidebar-width + ($sidebar-pad * 2);
+
+
+.flow-box
+{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+
+.main 
+{
+	padding: $xl-px;
+}
+
+// Fixed left sidebar (optional)
+@media screen and (min-width:1200px)
+{
+	.header
+	{
+		position: fixed;
+		top: 0; bottom: 0; 
+		max-width: 400px;
+		width: $sidebar-width;
+		padding: $sidebar-pad;
+	}
+
+	.wrapper
+	{
+		margin: 0;
+		margin-left: $sidebar-total-width;
+	}
+}

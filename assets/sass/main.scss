@@ -1,24 +1,7 @@
-// Spacing, margins, padding
-$xs-rem: 0.35rem;
-$sm-rem: 0.75rem;
-$md-rem: 1.5rem;
-$lg-rem: 2rem;
-$xl-rem: 3rem;
+@import 'includes/variables';
 
-$sm-px: 10px;
-$md-px: 20px;
-$lg-px: 30px;
-$xl-px: 60px;
+$content-max-width: 1100px;
 
-$sm-vw: 1vw;
-$md-vw: 2vw;
-$lg-vw: 3vw;
-$xl-vw: 5vw;
-
-// Dimensions
-$sidebar-width: 20vw;
-$sidebar-pad: $sm-vw;
-$sidebar-total-width: $sidebar-width + ($sidebar-pad * 2);
 
 :root
 {
@@ -34,51 +17,79 @@ $sidebar-total-width: $sidebar-width + ($sidebar-pad * 2);
     font: inherit;
 }
 
-.flow-box
-{
-    width: 100%;
-    min-height: 100vh;
-
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-}
-
 .header 
 {
     background: cornflowerblue; 
-
-    // Fixed left sidebar (optional)
-    @media screen and (min-width:1200px)
-    {
-        position: fixed;
-        top: 0; bottom: 0; 
-        max-width: 400px;
-        width: $sidebar-width;
-        padding: $sidebar-pad;
-    }
 }
 
 
 .wrapper
 {
-    margin: 0;
+	box-sizing: border-box;
 
-    // Fixed left sidebar (optional)
-    @media screen and (min-width:1200px)
+    width: 100%;
+    max-width: $content-max-width;
+
+	margin: 0 auto;
+	padding: $xl-px;
+
+
+    .header, .main, .footer
     {
-        padding-left: $sidebar-total-width;
+        margin: 0;
+        padding: 0;
+
+        > * {
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+        
     }
 
     .main
-    {
-        padding: $xl-px;
-        
+    {        
         // Where the post's body content lives
         .post
         {
+            margin: 0 0 $xl-rem;
+            padding: 0;
+
+            header, section, footer
+            {
+                margin: 0;
+                padding: 0;
+
+                > * 
+                {
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+
             section
             {
+                > * 
+                {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                h1 
+                {
+                    font-size: $lg-rem;
+                }
+
+                h1, h2, h3
+                {
+                    margin: $md-rem 0 $sm-rem;
+                }
+
+                h4, h5, h6
+                {
+                    margin: $sm-rem 0 $xs-rem;
+                }
+
                 p 
                 {
                     margin: 0.25rem 0;
@@ -90,26 +101,21 @@ $sidebar-total-width: $sidebar-width + ($sidebar-pad * 2);
                 }
             }
         }
+
+        header, section, footer 
+        {
+            margin: 0;
+        }
     }
 
 }
 
+
 .footer 
 {
     background-color: paleturquoise;
-    margin: $xl-rem 0 0;
-    padding: $lg-rem 0;
-
-    // Fixed left sidebar (optional)
-    @media screen and (min-width:1200px)
-    {
-        padding-left: $sidebar-total-width;
-    }
-    
-    > *
-    {
-        padding: 0 $xl-rem;
-    }
+	margin: 0;
+	padding: 0;
 }
 
 .post-title

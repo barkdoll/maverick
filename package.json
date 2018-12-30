@@ -19,7 +19,7 @@
 		"build-task:scss-compile": "node-sass-chokidar assets/sass/ -o assets/css",
 		"build-task:autoprefixer": "postcss assets/css/*.css --use autoprefixer -d assets/css",
 		"sass:build": "npm-run-all -p build-task:*",
-		"sass:watch": "chokidar \"assets/sass/**/*.scss\" -c \"npm run sass:build\"",
+		"sass:watch": "chokidar \"assets/sass/*.scss\" -c \"npm run sass:build\"",
 		"dev": "npm-run-all -p sass:*"
 	},
 	"gpm": {
