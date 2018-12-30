@@ -8,15 +8,20 @@
     <body class="{{body_class}}">
         {{> core/header}}
 
-        <div class="wrapper">
-            {{!-- All the main content gets inserted here, index.hbs, post.hbs, etcetera. --}}
-            <main class="main">
-                {{{body}}}
-            </main>
+        <div class="flow-box">
+
+            <div class="wrapper">
+                {{!-- All the main content gets inserted here, index.hbs, post.hbs, etcetera. --}}
+                <main class="main">
+                    {{{body}}}
+                </main>
+
+            </div>
 
             {{> core/footer}}
-        </div>
 
+        </div>
+        
         {{> core/foot}}
     </body>
 </html>

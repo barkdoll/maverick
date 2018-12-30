@@ -1,3 +1,13 @@
+// Dimensions
+$sidebar-width: 20vw;
+
+// Spacing, margins, padding
+$bumper-sm: 14px;
+$bumper-md: 20px;
+$bumper-lg: 30px;
+$bumper-xl: 60px;
+
+
 .kg-width-wide,
 .kg-width-full,
 .kg-gallery-container,
@@ -7,22 +17,64 @@
     font: inherit;
 }
 
+.flow-box
+{
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
 .header 
 {
-    // Fixed left sidebar (optional)
     background: cornflowerblue; 
-    // @media screen and (min-width:1200px)
-    // {
-    //     position: fixed;
-    //     top: 0; bottom: 0; 
-    //     max-width: 400px;
-    //     width: 20vw;
-    // }
+
+    // Fixed left sidebar (optional)
+    @media screen and (min-width:1200px)
+    {
+        position: fixed;
+        top: 0; bottom: 0; 
+        max-width: 400px;
+        width: $sidebar-width;
+    }
 }
 
 
-// .wrapper 
-// {
-//     // Fixed sidebar (optional)
-//     padding-left: 20vw;
-// }    
+.wrapper
+{
+    margin: 0;
+
+    // Fixed left sidebar (optional)
+    @media screen and (min-width:1200px)
+    {
+        padding-left: $sidebar-width;
+    }
+}
+
+.wrapper
+{
+    .main
+    {
+        padding: $bumper-xl;
+    }
+}
+
+.footer 
+{
+    background-color: palevioletred;
+    margin: $bumper-xl 0 0;
+    padding: $bumper-md 0;
+
+    // Fixed left sidebar (optional)
+    @media screen and (min-width:1200px)
+    {
+        padding-left: $sidebar-width;
+    }
+    
+    > *
+    {
+        padding: 0 $bumper-xl;
+    }
+}
