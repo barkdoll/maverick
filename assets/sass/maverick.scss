@@ -1,8 +1,8 @@
 @import 'includes/variables';
 
 // Dimensions
-$sidebar-width: 20vw;
-$sidebar-pad: $sm-vw;
+$sidebar-width: 18vw;
+$sidebar-pad: $md-vw;
 $sidebar-total-width: $sidebar-width + ($sidebar-pad * 2);
 
 
@@ -29,9 +29,17 @@ $sidebar-total-width: $sidebar-width + ($sidebar-pad * 2);
 	{
 		position: fixed;
 		top: 0; bottom: 0; 
+		overflow-y: auto;
+    	overflow-x: hidden;
+		padding: 3vw $sidebar-pad $sidebar-pad;
 		max-width: 400px;
 		width: $sidebar-width;
-		padding: $sidebar-pad;
+		text-align: right;
+
+		> * 
+		{
+			margin-bottom: 2rem;
+		}
 	}
 
 	.wrapper
