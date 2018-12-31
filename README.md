@@ -4,5 +4,5 @@ is a responsive Ghost theme for solo bloggers built on top of my blank theme [Pa
 ## Features
 
 - two-column left sidebar layout for larger viewports 
-- material-design card styles for posts.
-- styles compiled from Sass (SCSS).
+- material-design card styles for posts
+- styles compiled from Sass (SCSS)
