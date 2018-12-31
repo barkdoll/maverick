@@ -30,42 +30,78 @@ $content-max-width: 1050px;
 	padding: 3vw $sidebar-pad $sidebar-pad;
 }
 
-.main 
+
+.post 
 {
-	.post 
-	{
-		box-shadow: $material-shadow-1;
-		transition: $material-shadow-1-transition;
+	box-shadow: $material-shadow-1;
+	transition: $material-shadow-1-transition;
 	
-		&:hover 
+	border-radius: $card-border-radius;
+	
+	margin: 0 $md-vw 10vw;
+
+	& > :first-child
+	{
+		border-radius: $card-border-radius $card-border-radius 0 0;
+		// Apply to all children too
+		* { border-radius: $card-border-radius $card-border-radius 0 0; }
+	}
+
+	section, footer 
+	{
+		padding: $sm-rem $md-vw;
+	}
+	
+	.post-feature-image figure 
+	{
+		// border-radius: $card-border-radius $card-border-radius 0 0;
+		
+		height: 200px; /* whatever you want */
+		position: relative;
+		overflow: hidden;
+		
+		img 
 		{
-			box-shadow: $material-shadow-1-hover;
+			margin: auto;
+			position: absolute;
+			top: 0;
+			bottom: 0;
 		}
-
-		.post-feature-image figure 
-		{
-			// border-radius: $card-border-radius $card-border-radius 0 0;
-
-			height: 200px; /* whatever you want */
-			position: relative;
-			overflow: hidden;
-
-			img 
-			{
-				margin: auto;
-				position: absolute;
-				top: 0;
-				bottom: 0;
-			}
-		}
-
-
-		> :last-child
-		{
-			padding: $sm-vw $md-vw $md-vw;
-		}
+	}			
+			
+	& > :last-child
+	{
+		border-radius: 0 0 $card-border-radius $card-border-radius;
+		padding: $sm-vw $md-vw $xl-rem;
 	}
 }
+
+.footer
+{
+	padding: 0 $md-vw $md-vw;
+
+	& > * 
+	{
+		padding: $xs-rem $md-vw;
+	}
+}
+
+
+.single-post-view
+{
+	.post-feature-image figure 
+	{
+		height: 30vw;
+		max-height: 475px;
+		
+		img
+		{
+			// position: static;
+		}
+	}			
+			
+}
+
 
 
 .authors-list
@@ -85,46 +121,32 @@ $content-max-width: 1050px;
 {
 	.wrapper
 	{
-		margin: 0;
+		// margin: 0;
 		padding: $sm-vw;
 		margin-left: $sidebar-total-width;
 
 		min-width: unset;
-		width: auto;
+		width: 100%;
 		max-width: $content-max-width;
 
-		.post 
+		.post
 		{
-			border-radius: $card-border-radius;
+			margin: 0 $md-vw $lg-vw;
+		}
 
-			> :first-child
-			{
-				border-radius: $card-border-radius $card-border-radius 0 0;
-				// Apply to all children too
-				* { border-radius: $card-border-radius $card-border-radius 0 0; }
+		.footer
+		{
+			padding: 0 $md-vw;
+		}
 
-				// border-top: $card-border;
-			}
+		
+	}
 
-			&.with-feature-image > :first-child
-			{
-				border-top: none;
-			}
-
-			section, footer 
-			{
-				padding: $sm-rem $md-vw;
-
-				// border-left: $card-border;
-				// border-right: $card-border;
-			}
-
-
-			> :last-child
-			{
-				border-radius: 0 0 $card-border-radius $card-border-radius;
-				// border-bottom: $card-border;
-			}
+	:not(.single-post-view)
+	{
+		& > .post:hover 
+		{
+			box-shadow: $material-shadow-1-hover;
 		}
 	}
 
