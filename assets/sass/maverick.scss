@@ -1,4 +1,5 @@
 @import 'includes/variables';
+@import 'includes/material-design-shadows';
 
 // Dimensions
 $sidebar-width: 18vw;
@@ -10,6 +11,7 @@ $card-border-radius: .25rem;
 
 
 $content-max-width: 1050px;
+
 
 
 .flow-box
@@ -32,6 +34,14 @@ $content-max-width: 1050px;
 {
 	.post 
 	{
+		box-shadow: $material-shadow-1;
+		transition: $material-shadow-1-transition;
+	
+		&:hover 
+		{
+			box-shadow: $material-shadow-1-hover;
+		}
+
 		.post-feature-image figure 
 		{
 			// border-radius: $card-border-radius $card-border-radius 0 0;
@@ -93,8 +103,7 @@ $content-max-width: 1050px;
 				// Apply to all children too
 				* { border-radius: $card-border-radius $card-border-radius 0 0; }
 
-				border-top: $card-border;
-
+				// border-top: $card-border;
 			}
 
 			&.with-feature-image > :first-child
@@ -104,15 +113,17 @@ $content-max-width: 1050px;
 
 			section, footer 
 			{
-				border-left: $card-border;
-				border-right: $card-border;
+				padding: $sm-rem $md-vw;
+
+				// border-left: $card-border;
+				// border-right: $card-border;
 			}
 
 
 			> :last-child
 			{
 				border-radius: 0 0 $card-border-radius $card-border-radius;
-				border-bottom: $card-border;
+				// border-bottom: $card-border;
 			}
 		}
 	}
