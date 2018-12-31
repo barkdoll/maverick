@@ -7,7 +7,7 @@ $sidebar-pad: $md-vw;
 $sidebar-total-width: $sidebar-width + ($sidebar-pad * 2);
 
 $card-border: 1px solid #ddd;
-$card-border-radius: .25rem;
+$card-border-radius: 2px;
 
 
 $content-max-width: 1050px;
@@ -31,15 +31,20 @@ $content-max-width: 1050px;
 }
 
 
+.main, .footer
+{
+	padding: 0 $md-vw $lg-vw;
+}
+
+
 .post 
 {
+	
 	box-shadow: $material-shadow-1;
 	transition: $material-shadow-1-transition;
 	
 	border-radius: $card-border-radius;
 	
-	margin: 0 $md-vw 10vw;
-
 	& > :first-child
 	{
 		border-radius: $card-border-radius $card-border-radius 0 0;
@@ -76,28 +81,14 @@ $content-max-width: 1050px;
 	}
 }
 
-.footer
-{
-	padding: 0 $md-vw $md-vw;
-
-	& > * 
-	{
-		padding: $xs-rem $md-vw;
-	}
-}
 
 
 .single-post-view
 {
 	.post-feature-image figure 
 	{
-		height: 30vw;
+		height: 30vmax;
 		max-height: 475px;
-		
-		img
-		{
-			// position: static;
-		}
 	}			
 			
 }
@@ -127,19 +118,7 @@ $content-max-width: 1050px;
 
 		min-width: unset;
 		width: 100%;
-		max-width: $content-max-width;
-
-		.post
-		{
-			margin: 0 $md-vw $lg-vw;
-		}
-
-		.footer
-		{
-			padding: 0 $md-vw;
-		}
-
-		
+		max-width: $content-max-width;		
 	}
 
 	:not(.single-post-view)
@@ -165,5 +144,39 @@ $content-max-width: 1050px;
 		{
 			margin-bottom: 2rem;
 		}
+	}
+}
+
+
+
+@media screen and (max-width: 680px)
+{			
+	.single-post-view
+	{
+		.main
+		{
+			padding: 0;
+		}
+
+		.post
+		{
+			box-shadow: none;
+		}
+		.post-feature-image figure 
+		{
+			height: auto;
+			max-height: unset;
+			
+			img
+			{
+				position: static;
+			}
+		}			
+				
+	}
+
+	.footer
+	{
+		padding: $sm-rem $md-vw;
 	}
 }
