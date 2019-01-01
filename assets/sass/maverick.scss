@@ -56,23 +56,12 @@ $content-max-width: 1050px;
 	{
 		padding: $sm-rem $md-vw;
 	}
-	
-	.post-feature-image figure 
-	{
-		// border-radius: $card-border-radius $card-border-radius 0 0;
-		
-		height: 200px; /* whatever you want */
-		position: relative;
-		overflow: hidden;
-		
-		img 
-		{
-			margin: auto;
-			position: absolute;
-			top: 0;
-			bottom: 0;
-		}
-	}			
+
+
+	// .post-feature-image figure 
+	// {		
+	// 	max-height: 50vmax;
+	// }						
 			
 	& > :last-child
 	{
@@ -82,13 +71,39 @@ $content-max-width: 1050px;
 }
 
 
+.post-feature-image figure
+{
+	position: relative;
+	overflow: hidden;
+
+	img 
+	{
+		margin: auto;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+	}
+}
+
+.post-loop
+{
+		
+	.post-feature-image figure 
+	{
+		height: 225px; /* whatever you want */
+	}
+}
+
+
 
 .single-post-view
 {
 	.post-feature-image figure 
 	{
-		height: 30vmax;
-		max-height: 475px;
+		img 
+		{
+			position: static;
+		}
 	}			
 			
 }
@@ -129,6 +144,13 @@ $content-max-width: 1050px;
 		}
 	}
 
+	.single-post-view
+	{
+		.post-feature-image figure
+		{
+			max-height: 40vh;
+		}
+	}
 
 	.header
 	{
@@ -151,17 +173,28 @@ $content-max-width: 1050px;
 
 @media screen and (max-width: 680px)
 {			
-	.single-post-view
+	.main
 	{
-		.main
+		padding: 0;
+
+		.post-loop
 		{
-			padding: 0;
+			padding: 0 $md-vw;
 		}
 
-		.post
+		.single-post-view
 		{
-			box-shadow: none;
+			.post
+			{	
+				box-shadow: none;
+
+				section, footer
+				{
+					padding: 0 $lg-vw $lg-vw;
+				}
+			}
 		}
+
 		.post-feature-image figure 
 		{
 			height: auto;
@@ -171,10 +204,9 @@ $content-max-width: 1050px;
 			{
 				position: static;
 			}
-		}			
-				
-	}
-
+		}
+	}			
+			
 	.footer
 	{
 		padding: $sm-rem $md-vw;
